@@ -1,0 +1,29 @@
+{
+  "name": "cant",
+  "version": "0.1.0",
+  "description": "errors and logging in the form \"Can't x because y\"",
+  "keywords": [
+    "cant",
+    "can't",
+    "error",
+    "custom error",
+    "log",
+    "logging",
+    "errors"
+  ],
+  "author": "Weston Fribley <me@westonfribley.com> (http://westonfribley.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wtfribley/cant.git"
+  },
+  "bugs": "https://github.com/wtfribley/cant/issues",
+  "main": "cant.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "should": "~2.1.1"
+  }
+}
