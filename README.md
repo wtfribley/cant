@@ -18,7 +18,7 @@ Like. Really. Literally Can't
 **Cant** is designed for you to create a whole bunch of custom errors, all in
 one place, which you then use throughout your application.
 
-```node
+```js
 
 // errors.js
 
@@ -54,7 +54,7 @@ Error Levels and Streams
 Before creating your errors with `Cant.errors`, you can map severity levels to
 output streams using `Cant.streams`
 
-```node
+```js
 
 Cant.streams({
   'info': process.stdout,
@@ -72,7 +72,7 @@ stream), or an array of streams.
 Then, when creating errors with `Cant.errors`, each custom error will be
 assigned output streams based on their level.
 
-```node
+```js
 
 var errors = Cant.errors({
 
@@ -108,7 +108,7 @@ Well, Cant ***can*** help!
 
 Let's take an example from a typical Express/Mongoose app:
 
-```node
+```js
 
 var Cant = require('cant');
 
@@ -153,7 +153,7 @@ not unique."
 When combining errors like this, the deeper "source" error **does not** have to
 be a custom Cant error. So you could do something like this:
 
-```node
+```js
 
 var DBSaveError = Cant('save instance of model %s')
   .because(Error)
@@ -180,7 +180,7 @@ Here's all the options you have when defining your custom Cant errors.
 
 Set the name of the custom error.
 
-```node
+```js
 
 var ErrorFactory = require('cant').ErrorFactory;
 var factory = new ErrorFactory();
@@ -196,7 +196,7 @@ Provide a format string for the "Cant x" clause.
 This string will be used by Node's `util.format` to construct the final
 "Cant" clause of the error.
 
-```node
+```js
 
 var CantError = factory.cant('do action %s').create();
 
@@ -241,7 +241,7 @@ same location.
 
 Set an HTTP status code for the error.
 
-```node
+```js
 
 var ServerError = factory.http(500).create();
 
@@ -251,7 +251,7 @@ var ServerError = factory.http(500).create();
 
 Set a short severity level string.
 
-```node
+```js
 
 var WarnError = factory.level('warn').create();
 
@@ -265,7 +265,7 @@ to a custom location.
 Any `tty.WriteStream`, `stream.Writable` or `net.Socket` will be supported as an
 output stream.
 
-```node
+```js
 
 var StreamError = factory.streams(process.stderr).create();
 
