@@ -1,6 +1,6 @@
 {
   "name": "cant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "errors and logging in the form \"Can't x because y\"",
   "keywords": [
     "cant",
